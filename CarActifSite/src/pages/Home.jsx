@@ -50,7 +50,7 @@ export default function Home() {
           </div>
 
           <div className="cta-container">
-            <a href="/vehicules" className="cta-button">Voir tous nos véhicules</a>
+            <Link to="/vehicules" className="btn-filled">Voir tous nos véhicules</Link>
           </div>
         </section>
 
