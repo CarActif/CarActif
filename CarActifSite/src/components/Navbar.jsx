@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import logo from "../assets/caractif-logo.png"; // ✅ import correct
+import logo from "../public/caractif-logo.png"; // ✅ import correct
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
