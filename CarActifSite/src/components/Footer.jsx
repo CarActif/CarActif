@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer style={{
@@ -9,9 +11,7 @@ export default function Footer() {
       marginTop: 'auto',
       width: '100%'
     }}>
-      © 2025 CarActif — <a href="/mentions-legales" style={{ color: 'black' }}>Mentions Légales</a>
+      © 2025 CarActif — <Link to="/mentions-legales" style={{ color: 'black' }}>Mentions Légales</Link>
     </footer>
   );
 }
-
-
