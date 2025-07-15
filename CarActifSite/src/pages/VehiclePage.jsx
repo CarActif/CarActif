@@ -90,7 +90,7 @@ export default function VehiclePage() {
         </div>
 
         {/* Carte Agent */}
-        <a href={`/agent/${vehicle.agent_id}`} className="agent-card agent-clickable">
+        <Link to={`/agent/${vehicle.agent_id}`} className="agent-card agent-clickable">
   {vehicle.agents?.photo_url ? (
     <img src={vehicle.agents.photo_url} alt="Agent" className="agent-photo" />
   ) : (
@@ -98,11 +98,11 @@ export default function VehiclePage() {
   )}
 
   <h4 className="agent-name">{vehicle.agents?.prenom} {vehicle.agents?.nom}</h4>
-
-  <p className="agent-sector">📍 {vehicle.agents.secteur || "Secteur non renseigné"}</p>
+  <p className="agent-sector">📍 {vehicle.agents?.secteur || "Secteur non renseigné"}</p>
   <p className="agent-phone">📞 {vehicle.agents?.telephone || "Téléphone non renseigné"}</p>
   <p className="agent-email">✉️ {vehicle.agents?.email || "Email non renseigné"}</p>
-</a>
+</Link>
+
 
       </div>
 
