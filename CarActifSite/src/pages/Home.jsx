@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import "../styles/Home.css";
+import { Link } from "react-router-dom";
+
 
 const supabase = createClient(
   "https://rhbnlcmsyqjbzykexttt.supabase.co",
