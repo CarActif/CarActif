@@ -10,20 +10,21 @@ const supabase = createClient(
 
 export default function Home() {
   const [vehicules, setVehicules] = useState([]);
-  const [heroUrl, setHeroUrl] = useState(""); // <- Ajouté pour l’URL dynamique
+  const [heroUrl, setHeroUrl] = useState(""); // URL dynamique
 
   useEffect(() => {
-    // Fetch les véhicules récents
+    // Fetch véhicules récents
     const fetchVehicules = async () => {
       const { data } = await supabase.from("mandats").select("*").limit(10);
       setVehicules(data || []);
     };
     fetchVehicules();
 
-    // Récupérer l’URL de la photo hero dans Supabase Storage
-    const path = "hero-photo.jpg"; // nom exact du fichier
-    const { data } = supabase.storage.from("photo-profil").getPublicUrl(path);
-    setHeroUrl(data.publicUrl);
+    // Définir direct l'URL de l'image Hero (on évite le double slash !)
+    setHeroUrl(
+      "https://rhbnlcmsyqjbzykexttt.supabase.co/storage/v1/object/public/photo-profil/hero-photo.jpg"
+    );
+    // Si un jour tu veux le faire dynamique, tu utilises la méthode getPublicUrl
   }, []);
 
   return (
